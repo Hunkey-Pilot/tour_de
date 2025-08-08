@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tour_de/app/assests_path.dart';
+import 'package:tour_de/features/traveller/ui/screens/vehicle_details_screen/bus_details_screen.dart';
 import 'package:tour_de/features/traveller/ui/widgets/hotel_card.dart';
-import '../../../../app/app_colors.dart';
-import '../widgets/place_card.dart';
+import 'package:tour_de/features/traveller/ui/widgets/vehicle_card.dart';
+import '../../../../../app/app_colors.dart';
+import '../../widgets/place_card.dart';
 
 class TravellerHomeScreen extends StatefulWidget {
   const TravellerHomeScreen({super.key});
@@ -113,7 +115,11 @@ class _TravellerHomeScreenState extends State<TravellerHomeScreen> {
                   crossAxisSpacing: 0,
                 ),
                 itemBuilder: (context, index) {
-                  return hotelCard();
+                  return GestureDetector
+                    (
+                    onTap: _onTapBusCard,
+                      child: vehicleCard()
+                  );
                 },
               ),
 
@@ -123,5 +129,8 @@ class _TravellerHomeScreenState extends State<TravellerHomeScreen> {
         ),
       ),
     );
+  }
+  void _onTapBusCard(){
+    Navigator.pushNamed(context, BusDetailsScreen.name);
   }
 }

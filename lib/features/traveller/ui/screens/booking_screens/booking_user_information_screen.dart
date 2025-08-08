@@ -3,8 +3,8 @@ import 'package:flutter_sslcommerz/model/SSLCSdkType.dart';
 import 'package:flutter_sslcommerz/model/SSLCommerzInitialization.dart';
 import 'package:flutter_sslcommerz/model/SSLCurrencyType.dart';
 import 'package:flutter_sslcommerz/sslcommerz.dart';
-import '../../../../app/app_colors.dart';
-import '../../../common/widget/show_snack_bar_message.dart';
+import '../../../../../app/app_colors.dart';
+import '../../../../common/widget/show_snack_bar_message.dart';
 
 class BookingUserInformationScreen extends StatefulWidget {
   const BookingUserInformationScreen({super.key});

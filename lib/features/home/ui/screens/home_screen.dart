@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tour_de/app/assests_path.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tour_de/features/common/widget/app_logo.dart';
-import 'package:tour_de/features/traveller/ui/screens/traveller_auth_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/auth_screen/traveller_auth_screen.dart';
 
 import '../../../../app/app_colors.dart';
 import '../../../common/widget/social_icon_button.dart';

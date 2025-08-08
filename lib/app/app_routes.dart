@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tour_de/features/traveller/ui/screens/booking_details_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/booking_user_information_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/traveller_auth_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/booking_screens/booking_details_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/booking_screens/booking_user_information_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/vehicle_details_screen/bus_details_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/auth_screen/traveller_auth_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screens/traveller_tab_bar_screen.dart';
 import '../features/home/ui/screens/home_screen.dart';
 import '../features/home/ui/screens/splash_screen.dart';
 
@@ -22,6 +23,8 @@ class AppRoutes{
       ScreenWidget = BookingDetailsScreen();
     } else if(settings.name == BookingUserInformationScreen.name){
       ScreenWidget = BookingUserInformationScreen();
+    } else if(settings.name == BusDetailsScreen.name){
+      ScreenWidget = BusDetailsScreen();
     }
 
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tour_de/app/app_colors.dart';
 
-import '../../../common/widget/app_logo.dart';
-import '../widgets/login_signup_nav_bar.dart';
+import '../../../../common/widget/app_logo.dart';
+import '../../widgets/login_signup_nav_bar.dart';
 
 class TravellerAuthScreen extends StatefulWidget {
   const TravellerAuthScreen({super.key});

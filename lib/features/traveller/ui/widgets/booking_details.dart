@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tour_de/features/traveller/ui/screens/booking_details_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/booking_screens/booking_details_screen.dart';
 
 import '../../../../app/assests_path.dart';
 

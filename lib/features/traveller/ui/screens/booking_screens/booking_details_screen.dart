@@ -4,7 +4,7 @@ import 'package:tour_de/app/app_colors.dart';
 import 'package:tour_de/app/assests_path.dart';
 import 'package:tour_de/features/common/widget/user_profile_avatar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tour_de/features/traveller/ui/screens/booking_user_information_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/booking_screens/booking_user_information_screen.dart';
 import 'package:tour_de/features/traveller/ui/widgets/image_slider.dart';
 
 class BookingDetailsScreen extends StatefulWidget {

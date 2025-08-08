@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tour_de/app/app_colors.dart';
 import 'package:tour_de/app/assests_path.dart';
 
-import '../widgets/booking_details.dart';
+import '../../widgets/booking_details.dart';
 
 class BookingPageScreen extends StatefulWidget {
   const BookingPageScreen({super.key});

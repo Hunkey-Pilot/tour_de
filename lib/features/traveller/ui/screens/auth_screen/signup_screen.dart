@@ -1,29 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:tour_de/app/app_colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screen.dart';
-import '../../../common/widget/show_snack_bar_message.dart';
-import '../../../common/widget/social_icon_button.dart';
+import 'package:tour_de/features/common/widget/show_snack_bar_message.dart';
+import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screens/traveller_tab_bar_screen.dart';
+import '../../../../common/widget/social_icon_button.dart';
 import 'package:email_validator/email_validator.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignUpScreenState extends State<SignUpScreen> {
+
   final TextEditingController _emailTEController = TextEditingController();
   final TextEditingController _passwordTEController = TextEditingController();
+  final TextEditingController _confirmPasswordTEController = TextEditingController();
   final GlobalKey<FormState> _formKey=GlobalKey<FormState>();
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(16),
           child: Form(
             autovalidateMode: AutovalidateMode.onUserInteraction,
             key: _formKey,
@@ -48,12 +49,27 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 20),
                 TextFormField(
                   controller: _passwordTEController,
-                  textInputAction: TextInputAction.done,
+                  textInputAction: TextInputAction.next,
                   obscureText: true,
                   decoration: const InputDecoration(
                     hintText: 'Password',
                   ),
-                  validator: (String? value){
+                  validator: (String ? value){
+                    if(value!.length < 8){
+                      return "Password must be 8 letters";
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  controller: _confirmPasswordTEController,
+                  textInputAction: TextInputAction.done,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    hintText: 'Confirm Password',
+                  ),
+                  validator: (String ? value){
                     if(value!.length < 8){
                       return "Password must be 8 letters";
                     }
@@ -62,14 +78,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: _onTapLoginButton,
+                  onPressed: _onTapSignUpButton,
                   style: ElevatedButton.styleFrom(
                     fixedSize: Size.fromWidth(320),
                     backgroundColor: AppColors.themeColor,
                     foregroundColor: Colors.black,
                   ),
                   child: const Text(
-                    "Login",
+                    "Sign Up",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2,
@@ -77,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40,),
+                const SizedBox(height: 20,),
                 Row(
                   children: [
                     Expanded(
@@ -86,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 1,
                       ),
                     ),
-                    Text("or Continue With"),
+                    Text("or Continue with"),
                     Expanded(child: Divider(
                       indent: 8,
                     )),
@@ -122,13 +138,17 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
-  void _onTapLoginButton(){
-    if(_formKey.currentState!.validate()){
+  void _onTapSignUpButton(){
+    if(_formKey.currentState!.validate() && _confirmPasswordTEController.text == _passwordTEController.text){
       Navigator.pushNamedAndRemoveUntil(context, TravellerTabBarScreen.name,(predicate)=>false);
-      showSnackBarMessage(context, "Logged In Successfully");
+      showSnackBarMessage(context, "Signed Up Successfully");
+    } else if(_confirmPasswordTEController.text != _passwordTEController.text){
+       showSnackBarMessage(context, "Both Password must have to same");
+    } else{
+      showSnackBarMessage(context, "Some error Occurred");
     }
-
   }
+
 }
 
 

@@ -3,7 +3,7 @@ import 'package:tour_de/app/app_colors.dart';
 import 'package:tour_de/app/assests_path.dart';
 import 'package:tour_de/features/common/widget/user_profile_avatar.dart';
 
-import '../widgets/post_card.dart';
+import '../../widgets/post_card.dart';
 
 class SocialMediaPageScreen extends StatefulWidget {
   const SocialMediaPageScreen({super.key});

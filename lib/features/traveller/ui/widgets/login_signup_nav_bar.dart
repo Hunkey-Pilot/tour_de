@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tour_de/features/traveller/controller/login_signup_controller.dart';
-import 'package:tour_de/features/traveller/ui/screens/login_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/signup_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/auth_screen/login_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/auth_screen/signup_screen.dart';
 
 
 class LoginSignUpSwitcher extends StatelessWidget {

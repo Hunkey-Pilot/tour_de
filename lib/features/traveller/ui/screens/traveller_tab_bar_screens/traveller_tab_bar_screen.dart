@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:tour_de/features/traveller/ui/screens/booking_page_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/social_media_page_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/traveller_auth_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/traveller_home_screen.dart';
-import 'package:tour_de/features/traveller/ui/screens/trending_page_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screens/booking_page_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screens/social_media_page_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/auth_screen/traveller_auth_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screens/traveller_home_screen.dart';
+import 'package:tour_de/features/traveller/ui/screens/traveller_tab_bar_screens/trending_page_screen.dart';
 
-import '../../../common/widget/user_profile_avatar.dart';
+import '../../../../common/widget/user_profile_avatar.dart';
 
 class TravellerTabBarScreen extends StatefulWidget {
   const TravellerTabBarScreen({super.key});
